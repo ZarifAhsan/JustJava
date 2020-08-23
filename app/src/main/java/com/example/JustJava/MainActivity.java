@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     int totalPrice;
-    String Name = "Zarif Bin Ahsan";
+    String Name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         calculatePrice();
+        getName();
         displayMessage(createOrderSummary());
     }
 
@@ -61,14 +62,21 @@ public class MainActivity extends AppCompatActivity {
         orderSummaryTextView.setText(message);
     }
 
+    private void getName() {
+        TextView getName = findViewById(R.id.name);
+        Name = getName.getText().toString();
+    }
+
     /**
      * Calculates the price of the order.
-     *
      */
     private void calculatePrice() {
         totalPrice = (quantity * 5);
     }
 
+    /**
+    * Creates the order summary
+    */
     private String createOrderSummary() {
         String priceMessage = "Name: " + Name;
         priceMessage += "\nQuantity: " + quantity;
