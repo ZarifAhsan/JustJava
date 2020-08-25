@@ -3,9 +3,12 @@ package com.example.JustJava;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 0;
     int totalPrice;
     String Name = "";
+    int n = 0;
+    String[] toppings = new String[4];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        isChecked();
         calculatePrice();
         getName();
         displayMessage(createOrderSummary());
@@ -80,8 +86,35 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary() {
         String priceMessage = "Name: " + Name;
         priceMessage += "\nQuantity: " + quantity;
+        if (n != 0)
+            priceMessage += "\nToppings: " + Arrays.toString(toppings);
+        else
+            priceMessage += "\nToppings: None Added";
         priceMessage += "\nTotal: $" + totalPrice;
         priceMessage += "\nThank You!";
         return priceMessage;
+    }
+
+    private void isChecked() {
+        CheckBox chocolateChips = findViewById(R.id.chocolate_chips_check_box);
+        CheckBox sprinkles = findViewById(R.id.sprinkles_check_box);
+        CheckBox whippedCream = findViewById(R.id.whipped_cream_check_box);
+        CheckBox nuts = findViewById(R.id.nuts_check_box);
+        if (chocolateChips.isChecked()) {
+            toppings[0] = "Chocolate chips";
+            n++;
+        }
+        if (sprinkles.isChecked()) {
+            toppings[1] = "Sprinkles";
+            n++;
+        }
+        if (whippedCream.isChecked()) {
+            toppings[2] = "Whipped Cream";
+            n++;
+        }
+        if (nuts.isChecked()) {
+            toppings[3] = "Nuts";
+            n++;
+        }
     }
 }

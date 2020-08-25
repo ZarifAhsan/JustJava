@@ -11,4 +11,10 @@
     <string name="dollar">$0</string>
     <string name="name">Name</string>
     <string name="order_summary">Order Summary</string>
+    <string name="toppings">Toppings</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="chocolate_chips">Chocolate Chips</string>
+    <string name="sprinkles">Sprinkles</string>
+    <string name="nuts">Nuts</string>
+    <string name="order_your_coffee_here">Order your coffee here</string>
 </resources>
