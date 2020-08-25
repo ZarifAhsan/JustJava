@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
-    int totalPrice;
+    float totalPrice;
     String Name = "";
     int n = 0;
     String[] toppings = new String[4];
@@ -109,17 +109,17 @@ public class MainActivity extends AppCompatActivity {
         if (chocolateChips.isChecked()) {
             toppings[0] = "Chocolate chips";
             n++;
-            totalPrice += 1;
+            totalPrice += 0.5;
         }
         if (sprinkles.isChecked()) {
             toppings[1] = "Sprinkles";
             n++;
-            totalPrice += 1;
+            totalPrice += 0.5;
         }
         if (whippedCream.isChecked()) {
             toppings[2] = "Whipped Cream";
             n++;
-            totalPrice += 1;
+            totalPrice += 0.5;
         }
     }
 }
