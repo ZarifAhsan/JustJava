@@ -100,15 +100,6 @@
         android:paddingStart="24dp"
         android:paddingEnd="0dp"/>
 
-    <CheckBox
-        android:id="@+id/nuts_check_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nuts"
-        android:textSize="16sp"
-        android:paddingStart="24dp"
-        android:paddingEnd="0dp"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

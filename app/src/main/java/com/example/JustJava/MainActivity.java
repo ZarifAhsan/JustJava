@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        isChecked();
         calculatePrice();
+        isChecked();
         getName();
         displayMessage(createOrderSummary());
     }
@@ -84,37 +84,40 @@ public class MainActivity extends AppCompatActivity {
     * Creates the order summary
     */
     private String createOrderSummary() {
-        String priceMessage = "Name: " + Name;
-        priceMessage += "\nQuantity: " + quantity;
-        if (n != 0)
-            priceMessage += "\nToppings: " + Arrays.toString(toppings);
-        else
-            priceMessage += "\nToppings: None Added";
-        priceMessage += "\nTotal: $" + totalPrice;
-        priceMessage += "\nThank You!";
-        return priceMessage;
+        String priceMessage;
+        if (quantity != 0) {
+            if (Name.equals("")) {
+                priceMessage = "Name: Anonymous";
+            } else {priceMessage = "Name: " + Name;}
+            priceMessage += "\nQuantity: " + quantity;
+            if (n != 0)
+                priceMessage += "\nToppings: " + Arrays.toString(toppings);
+            else
+                priceMessage += "\nToppings: None Added";
+            priceMessage += "\nTotal: $" + totalPrice;
+            priceMessage += "\nThank You!";
+            return priceMessage;
+        }return priceMessage = "Insert Quantity of Coffee";
     }
 
     private void isChecked() {
         CheckBox chocolateChips = findViewById(R.id.chocolate_chips_check_box);
         CheckBox sprinkles = findViewById(R.id.sprinkles_check_box);
         CheckBox whippedCream = findViewById(R.id.whipped_cream_check_box);
-        CheckBox nuts = findViewById(R.id.nuts_check_box);
         if (chocolateChips.isChecked()) {
             toppings[0] = "Chocolate chips";
             n++;
+            totalPrice += 1;
         }
         if (sprinkles.isChecked()) {
             toppings[1] = "Sprinkles";
             n++;
+            totalPrice += 1;
         }
         if (whippedCream.isChecked()) {
             toppings[2] = "Whipped Cream";
             n++;
-        }
-        if (nuts.isChecked()) {
-            toppings[3] = "Nuts";
-            n++;
+            totalPrice += 1;
         }
     }
 }
