@@ -15,14 +15,16 @@
         android:text="@string/order_your_coffee_here"
         android:textColor="@android:color/black"
         android:textAllCaps="true"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:layout_gravity="center"/>
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/name_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
+        android:autofillHints="@string/name"
+        android:inputType="text"
         android:layout_marginBottom="8dp"/>
 
     <TextView

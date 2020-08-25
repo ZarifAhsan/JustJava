@@ -29,16 +29,18 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
-        quantity++;
-        displayQuantity(quantity);
+            quantity++;
+            displayQuantity(quantity);
+
     }
 
     /**
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
-        quantity--;
-        displayQuantity(quantity);
+        if (quantity != 0) {
+            quantity--;
+        } displayQuantity(quantity);
     }
 
     /**
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getName() {
-        TextView getName = findViewById(R.id.name);
+        TextView getName = findViewById(R.id.name_edit_text);
         Name = getName.getText().toString();
     }
 
