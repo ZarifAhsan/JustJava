@@ -109,17 +109,17 @@ public class MainActivity extends AppCompatActivity {
         if (chocolateChips.isChecked()) {
             toppings[0] = "Chocolate chips";
             n++;
-            totalPrice += 0.5;
+            totalPrice += 2;
         }
         if (sprinkles.isChecked()) {
             toppings[1] = "Sprinkles";
             n++;
-            totalPrice += 0.5;
+            totalPrice += 1.5;
         }
         if (whippedCream.isChecked()) {
             toppings[2] = "Whipped Cream";
             n++;
-            totalPrice += 0.5;
+            totalPrice += 1;
         }
     }
 }
