@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+    android:background="#eeeeee">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,6 +50,7 @@
                 android:layout_marginEnd="8dp"
                 android:onClick="decrement"
                 android:text="@string/minus"
+                android:textColor="@android:color/white"
                 android:textAllCaps="true"
                 android:textSize="16sp" />
 
@@ -66,6 +67,7 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
                 android:onClick="increment"
+                android:textColor="@android:color/white"
                 android:text="@string/plus"
                 android:textAllCaps="true"
                 android:textSize="16sp" />
@@ -125,6 +127,7 @@
             android:onClick="submitOrder"
             android:text="@string/order"
             android:textAllCaps="true"
+            android:textColor="@android:color/white"
             android:textSize="16sp" />
         
     </LinearLayout>
