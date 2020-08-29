@@ -1,6 +1,8 @@
 package com.example.JustJava;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         isChecked();
         getName();
         displayMessage(createOrderSummary());
+        composeEmail("Coffee order for" + Name);
     }
 
     /**
@@ -92,10 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 priceMessage = "Name: Anonymous";
             } else {priceMessage = "Name: " + Name;}
             priceMessage += "\nQuantity: " + quantity;
-            if (n != 0)
+            if (n != 0) {
                 priceMessage += "\nToppings: " + Arrays.toString(toppings);
-            else
-                priceMessage += "\nToppings: None Added";
+            } else {priceMessage += "\nToppings: None Added";}
             priceMessage += "\nTotal: $" + totalPrice;
             priceMessage += "\nThank You!";
             return priceMessage;
@@ -120,6 +122,15 @@ public class MainActivity extends AppCompatActivity {
             toppings[2] = "Whipped Cream";
             n++;
             totalPrice += 1;
+        }
+    }
+
+    public void composeEmail(String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 }
